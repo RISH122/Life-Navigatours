@@ -17,6 +17,7 @@ const bookingRouter=require('./routes/bookingRoutes');
 const viewsRouter=require('./routes/viewsRouters');
 const cors = require('cors');
 
+// start express here
 const app = express();
 
 app.set('view engine','pug');
