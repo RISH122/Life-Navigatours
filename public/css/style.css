@@ -159,11 +159,7 @@ body {
     from(rgba(125, 213, 111, 0.85)),
     to(rgba(40, 180, 135, 0.85))
   );
-  background-image: linear-gradient(
-    to bottom right,
-    rgba(125, 213, 111, 0.85),
-    rgba(40, 180, 135, 0.85)
-  );
+  background-image: linear-gradient(to bottom right, rgb(33 220 159 / 85%), rgb(11 29 5 / 85%));
 }
 
 .heading-primary {
@@ -584,7 +580,7 @@ body {
     from(#7dd56f),
     to(#28b487)
   );
-  background: linear-gradient(to right bottom, #7dd56f, #28b487);
+  background: linear-gradient(to right bottom, #4c9141, #1971b8);
   clip-path: polygon(
     0 var(--section-rotate),
     100% 0,
