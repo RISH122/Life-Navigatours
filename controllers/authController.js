@@ -40,15 +40,18 @@ exports.signup=catchAsync(async (req,res,next)=>{
         email:req.body.email,
         password:req.body.password,
         passwordConfirm:req.body.passwordConfirm,
-        passwordChangedAt:req.body.passwordChangedAt
     });
 
     if(!req.body.email||!req.body.password)
         return next(new AppError('please provide email and password!',400));
 
     const url=`${req.protocol}://${req.get('host')}/me`;
-    console.log(url);
-    await new Email(newUser,url).sendWelcome();
+    try {
+      await new Email(newUser, url).sendWelcome();
+    } catch (err) {
+      console.error('Error sending welcome email:', err);
+      // Optionally, you can decide what to do if sending the email fails
+    }
     createSendToken(newUser, 201, res);
 });
 

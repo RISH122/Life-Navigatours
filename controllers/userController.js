@@ -84,8 +84,8 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 
 
 exports.createUser=(req,res)=>{
-    res.status(500).json({
-        status:'error',
+    res.status(200).json({
+        status:'success',
         message:'This route is not yet defined'
     })
 }

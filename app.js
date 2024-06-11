@@ -20,6 +20,7 @@ const cors = require('cors');
 // start express here
 const app = express();
 
+app.use(cors());
 app.set('view engine','pug');
 app.set('views',path.join(__dirname,'views'));
 
@@ -34,7 +35,7 @@ const styleSrcUrls = [
   'https://tile.openstreetmap.org',
   'https://fonts.googleapis.com/'
 ];
-const connectSrcUrls = ['https://unpkg.com', 'https://tile.openstreetmap.org', 'https://api.razorpay.com','http://localhost:3000'];
+const connectSrcUrls = ['https://unpkg.com', 'https://tile.openstreetmap.org', 'https://api.razorpay.com','http://localhost:3000','http://127.0.0.1:3000','ws://localhost:63609'];
 const fontSrcUrls = ['fonts.googleapis.com', 'fonts.gstatic.com'];
  
 app.use(
@@ -91,9 +92,6 @@ app.use('/api/v1/reviews',reviewRouter);
 app.use('/api/v1/bookings',bookingRouter);
 const PORT = 8080;
 
-app.use(cors({
-  origin: '*'
-}));
 // Proxy route
 app.get('/api/orders', async (req, res) => {
   try {

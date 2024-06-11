@@ -13,7 +13,13 @@ export const signup = async (name, email, password,passwordConfirm) => {
         passwordConfirm
       }
     });
+    // Log the full response object
+    console.log('Full response:', res);
+    // Log the response data specifically
+    console.log('Response data:', res.data);
 
+    // Check the status and log it
+    console.log('Response status:', res.data.status);
     if (res.data.status === 'success') {
       showAlert('success', 'Signed up successfully!');
       window.setTimeout(() => {
